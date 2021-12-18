@@ -1,22 +1,14 @@
 version: 0.2
 
 phases:
-  install:
-    commands:
-      - apt-get install -y software-properties-common
-      - add-apt-repository ppa:openjdk-r/ppa
-      - apt install -y openjdk-8-jdk
-      - apt install -y maven
-  pre_build:
-    commands:
-      - echo Logging in to Amazon ECR...
-      - $(aws ecr get-login --region $AWS_DEFAULT_REGION)
   build:
     commands:
       - echo Build started on `date`
-      - echo Building the Docker image...
-      - mvn install
+      - mvn test
   post_build:
     commands:
       - echo Build completed on `date`
-      - echo Pushing the Docker image...
+      - mvn package
+artifacts:
+  files:
+    - target/aws-build-sample-maven-project-0.0.1-SNAPSHOT.jar
