@@ -25,4 +25,4 @@ jobs:
     - name: Build with Maven
       run: mvn -B package --file pom.xml
     - name: display
-      run: echo 'darshan'
+      run: apt install awscli -y
