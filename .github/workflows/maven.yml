@@ -12,11 +12,6 @@ on:
 jobs:
   Build1:
     runs-on: ubuntu-latest
-    container: 
-      image: darshanzr/ubuntuimagebyd
-      credentials:
-        username: darshanzr
-        password: ${{ secrets.DOCKER_HUB_PASSWORD }}
 
     steps:
     - uses: actions/checkout@v2
