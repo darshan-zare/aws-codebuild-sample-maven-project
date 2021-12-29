@@ -17,7 +17,7 @@ jobs:
       image: darshanzr:ubuntuimagebyd-latest
       credentials: 
         username: darshanzr
-        password: ${{ secrets.Drshnzr@7410}}
+        password: ${{ secrets.Drshnzr@7410 }}
 
     steps:
     - uses: actions/checkout@v2
