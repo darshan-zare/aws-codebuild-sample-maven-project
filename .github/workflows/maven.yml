@@ -10,14 +10,13 @@ on:
     branches: [ master ]
 
 jobs:
-  build:
-
+  node-docker:
     runs-on: ubuntu-latest
-    container:
-      image: darshanzr:ubuntuimagebyd-latest
-      credentials: 
+    container: 
+      image: darshanzr/ubuntuimagebyd
+      credentials:
         username: darshanzr
-        password: ${{ secrets.Drshnzr@7410 }}
+        password: ${{ secrets.DOCKER_HUB_PASSWORD }}
 
     steps:
     - uses: actions/checkout@v2
