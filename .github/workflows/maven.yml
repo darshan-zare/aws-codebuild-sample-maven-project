@@ -12,7 +12,9 @@ on:
 jobs:
   build:
 
-    runs-on: darshanzr/ubuntuimagebyd-latest
+    runs-on: ubuntu-latest
+    container:
+      image: darshanzr:ubuntuimagebyd-latest
 
     steps:
     - uses: actions/checkout@v2
