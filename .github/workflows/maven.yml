@@ -10,7 +10,7 @@ on:
     branches: [ master ]
 
 jobs:
-  Build:
+  Build1:
     runs-on: ubuntu-latest
     container: 
       image: darshanzr/ubuntuimagebyd
