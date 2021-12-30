@@ -5,10 +5,10 @@ phases:
     commands:
       - curl -sSfL https://raw.githubusercontent.com/anchore/syft/main/install.sh | sh -s -- -b /usr/local/bin
       - syft version
-      - syft dir:. >> syftresult.json
+      - syft dir:.
       - curl -sSfL https://raw.githubusercontent.com/anchore/grype/main/install.sh | sh -s -- -b /usr/local/bin
       - grype version
-      - grype sbom:./syftresult.json
+      - grype .
        
   post_build:
     commands:
