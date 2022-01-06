@@ -15,6 +15,10 @@ phases:
     commands:
       - echo "Building project using maven"
       - mvn clean install -Dmaven.test.skip=true
+  test:
+    commands:
+      - echo "Generating report"
+      - mvn surefire-report:report
   post_build:
     commands:
       - echo "packaging completed on `date`"
