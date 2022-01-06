@@ -18,6 +18,12 @@ phases:
   post_build:
     commands:
       - echo "packaging completed on `date`"
+      - mvn package
+
+reports:
+  'arn:aws:codebuild:ap-south-1:570813154045:report-group/testreport1':
+  files:
+    - './target/site/surefire-report.html'
 
 artifacts:
   files:
